@@ -36,10 +36,10 @@ export default function UserCard() {
     );
   }
 
-  if (Object.keys(currentUser).length === 0) {
-    return renderPlaceholder();
-  } else if (isCurrentUserLoading) {
+  if (isCurrentUserLoading) {
     return renderLoading();
+  } else if (Object.keys(currentUser).length === 0) {
+    return renderPlaceholder();
   } else {
     return renderUserCard();
   }
